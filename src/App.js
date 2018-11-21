@@ -1,25 +1,45 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import User from "./User";
+import "./App.css";
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: []
+    };
+  }
+
+  componentDidMount() {
+    this.retrieveGithubUsers();
+  }
+
+  async retrieveGithubUsers() {
+    let response = await fetch("https://api.github.com/users");
+    let users = await response.json();
+    this.setState({
+      users
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <div className="list">
+          {this.state.users.map((user, u) => (
+            <User
+              key={u}
+              username={user.login}
+              user_data={user.url}
+              avatar={user.avatar_url}
+              profile={user.html_url}
+              starred={user.starred_url}
+              followers={user.followers_url}
+              following={user.following_url}
+              gist={user.gists_url}
+            />
+          ))}
+        </div>
       </div>
     );
   }
