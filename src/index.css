@@ -1,5 +1,11 @@
-* {
+html {
   box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
   color: #333;
   text-decoration: none;
 }
@@ -20,7 +26,7 @@ body {
 }
 
 .user {
-  width: 30%;
+  width: 20%;
   height: 160px;
   display: flex;
   align-items: center;

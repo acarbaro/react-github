@@ -1,46 +1,21 @@
 import React from "react";
-import User from "./User";
+import Results from "./Results";
+import Details from "./Details";
+import { Router } from "@reach/router";
+import { Provider } from "react-redux";
+import store from "./store";
+
 import "./App.css";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: []
-    };
-  }
-
-  componentDidMount() {
-    this.retrieveGithubUsers();
-  }
-
-  async retrieveGithubUsers() {
-    let response = await fetch("https://api.github.com/users");
-    let users = await response.json();
-    this.setState({
-      users
-    });
-  }
-
   render() {
     return (
-      <div>
-        <div className="list">
-          {this.state.users.map((user, u) => (
-            <User
-              key={u}
-              username={user.login}
-              user_data={user.url}
-              avatar={user.avatar_url}
-              profile={user.html_url}
-              starred={user.starred_url}
-              followers={user.followers_url}
-              following={user.following_url}
-              gist={user.gists_url}
-            />
-          ))}
-        </div>
-      </div>
+      <Provider store={store}>
+        <Router>
+          <Results path="/" />
+          <Details path="profile/:username" />
+        </Router>
+      </Provider>
     );
   }
 }
