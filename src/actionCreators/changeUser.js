@@ -1,3 +1,3 @@
-export default function changeUser(users) {
-  return { type: "CHANGE_USER", payload: users };
+export default function changeUser(user_url) {
+  return { type: "CHANGE_USER", payload: user_url };
 }

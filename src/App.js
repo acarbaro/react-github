@@ -5,8 +5,6 @@ import { Router } from "@reach/router";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import "./App.css";
-
 class App extends React.Component {
   render() {
     return (

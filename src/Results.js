@@ -2,7 +2,6 @@ import React from "react";
 import User from "./User";
 
 import { connect } from "react-redux";
-import changeUser from "./actionCreators/changeUser";
 import getUsers from "./actionCreators/getUsers";
 
 class Results extends React.Component {

@@ -10,6 +10,15 @@ html {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: #fff;
   margin: 0;
@@ -17,7 +26,8 @@ body {
 }
 
 .search,
-.list {
+.list,
+.detail {
   background-color: #fff;
   width: 95%;
   margin: 0 auto;
@@ -26,8 +36,8 @@ body {
 }
 
 .user {
-  width: 20%;
-  height: 160px;
+  width: 43vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -39,6 +49,15 @@ body {
 .user img {
   width: 80px;
   min-height: 80px;
+}
+
+.user-detail img {
+  width: 25vh;
+  min-height: 10vh;
+}
+
+.user-name h3 {
+  font-weight: normal
 }
 
 .info {
