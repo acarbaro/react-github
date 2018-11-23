@@ -34,7 +34,7 @@ class Details extends React.Component {
           {this.state.loader ? (
             <AvatarLoader />
           ) : (
-            <img src={this.state.user.avatar_url} />
+            <img src={this.state.user.avatar_url} alt="avatar" />
           )}
         </div>
         <div className="user-name">

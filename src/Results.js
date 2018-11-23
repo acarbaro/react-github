@@ -12,8 +12,6 @@ class Results extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
-      loader: false,
       length: 10,
       dummyArr: []
     };

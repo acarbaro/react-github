@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import Results from "./Results";
 import Details from "./Details";
@@ -9,17 +9,25 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchUsername: ""
+    };
+  }
+
   render() {
     return (
-      <div>
-        <Header />
-        <Provider store={store}>
+      <Provider store={store}>
+        <div>
+          <Header />
           <Router>
             <Results path="/" />
             <Details path="profile/:username" />
           </Router>
-        </Provider>
-      </div>
+        </div>
+      </Provider>
     );
   }
 }

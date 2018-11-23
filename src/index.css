@@ -43,12 +43,29 @@ header a {
   display: block;
 }
 
+header input {
+  background: transparent;
+  outline: 0;
+  color: grey;
+  height: 5vh;
+  border: none;
+  padding: 5px;
+  font-size: 0.9em
+}
+
+header input::placeholder {
+  color: grey;
+  font-size: 0.9em;
+}
+
 header {
   display: flex;
+  flex-direction: column;
   align-content: center;
-  justify-content: space-between;
-  padding: 3vh;
+  justify-content: space-evenly;
+  padding: 2vh;
   background: #24292e;
+  height: 15vh;
 }
 
 .user {
