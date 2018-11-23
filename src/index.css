@@ -35,6 +35,22 @@ body {
   border-radius: 5px;
 }
 
+header a {
+  color: #ffffff;
+  font-size: 2em;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+
+header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 3vh;
+  background: #24292e;
+}
+
 .user {
   width: 43vh;
   height: 10vh;
@@ -51,8 +67,12 @@ body {
   min-height: 80px;
 }
 
-.user-detail img {
+.user-detail {
   width: 25vh;
+}
+
+.user-detail img {
+  width: 100%;
   min-height: 10vh;
 }
 
