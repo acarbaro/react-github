@@ -14,4 +14,22 @@ const AvatarLoader = props => (
   </ContentLoader>
 );
 
-export default AvatarLoader;
+const CardLoader = props => (
+  <ContentLoader
+    height={77}
+    width={353}
+    speed={4}
+    primaryColor="#d4d4d4"
+    secondaryColor="#efefef"
+    {...props}
+  >
+    <rect x="119.69" y="64.67" rx="0" ry="0" width="0" height="0" />
+    <rect x="54.69" y="56.67" rx="0" ry="0" width="0" height="0" />
+    <rect x="20.69" y="13.67" rx="0" ry="0" width="353" height="77" />
+  </ContentLoader>
+);
+
+export default {
+  AvatarLoader,
+  CardLoader
+};

@@ -1,6 +1,6 @@
-export default function usersReducer(state = {}, action) {
+export default function loaderReducer(state = false, action) {
   switch (action.type) {
-    case "CHANGE_USER":
+    case "CHANGE_LOADER":
       return action.payload;
     default:
       return state;

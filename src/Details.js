@@ -1,8 +1,9 @@
 import React from "react";
 
-import ImageLoader from "./ContentLoader";
-
+import ContentLoader from "./ContentLoader";
 import { connect } from "react-redux";
+
+const { AvatarLoader } = ContentLoader;
 
 class Details extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Details extends React.Component {
       <div className="detail">
         <div className="user-detail">
           {this.state.loader ? (
-            <ImageLoader />
+            <AvatarLoader />
           ) : (
             <img src={this.state.user.avatar_url} />
           )}
